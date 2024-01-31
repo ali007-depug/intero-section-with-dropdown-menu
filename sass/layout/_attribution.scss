@@ -1,0 +1,20 @@
+@use "../global/" as *;
+.attribution{
+    // text-align: center;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    a{
+        color: $almost_white;
+        background-color: $almost_black;
+        border-radius: 0.5rem;
+        padding:0.4rem 0.5rem;
+        border: 1px solid currentColor;
+        &:hover{
+            color: $almost_black;
+            background-color: $almost_white;
+        }
+    }
+}

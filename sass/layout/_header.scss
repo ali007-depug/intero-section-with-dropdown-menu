@@ -1,0 +1,189 @@
+@use "../global/" as *;
+.header {
+  display: flex;
+  position: relative;
+  top:-0.3125rem; //5px
+  @include breakpoint(lg) {
+    align-items: center;
+    top: 0;
+  }
+  // snap Icon
+  &__logo {
+    // width: 90%;
+    padding: $sec-padding;
+    @include breakpoint(lg) {
+      // width: 100%;
+    }
+  }
+  // style nav {links with submenus & login register}
+  .nav {
+    position: absolute;
+    right: -0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100;
+    padding: $sec-padding;
+    //handeld with js
+    &.addHeight {
+      height: 100vh;
+      background-color: $almost_white;
+    }
+    @include breakpoint(lg) {
+      flex-direction: row;
+      height: auto;
+      background-color: transparent;
+      flex-grow: 1;
+      justify-content: space-between;
+      position: relative;
+    }
+    &__toggle {
+      cursor: pointer;
+      //hide .toggle on desktop
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+    //display default values for mobile
+    &__open {
+      display: block;
+    }
+    &__close {
+      display: none;
+      margin-bottom: 1.25rem;
+    }
+    /**
+    * .menu {link {submenu} , login&Register Wrapper}
+    * hide for default on mobile
+    * chenge display property when click on burger menu */
+    &__menu {
+      display: none;
+      flex-direction: column;
+      align-self: start;
+      margin-top: 1.87rem; //30px
+      gap: 1.875rem;
+      min-height: 1.68rem; //27px
+
+      //show menu when click on burger menu (handeld by js)
+      &.active {
+        display: flex;
+      }
+      @include breakpoint(lg) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+      }
+    }
+    //.link = all (.menu li)
+    &__link {
+      cursor: pointer;
+      min-width: 6.25em; //100px
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      font-size: .9375rem; //15px
+      a {
+        color: $medium_gray;
+        &:hover {
+          color: $almost_black;
+          transition: color 0.3s;
+        }
+        span {
+          display: inline-block;
+        }
+      }
+      img {
+        margin-left: 0.3125rem;
+      }
+      //arrow down icon
+      .arrow__down {
+        //handeld with js
+        &.playWithArrowDown {
+          display: none;
+        }
+      }
+      //arrow up icon
+      .arrow__up {
+        display: none;
+        //handeld with js
+        &.playWithArrowUp {
+          display: inline;
+        }
+      }
+    }
+
+    //.sub_menu = (li .submenu)
+    &__sub__menu {
+      position: relative;
+      top: 1.25rem;
+      max-height: 0;
+      overflow: hidden;
+      //handeld by js to show sub menu
+      &.playWithSub {
+        padding: 0.9375rem 1.25rem;
+        max-height: 11.87em; //190px
+        min-width: 7.5rem; //120px
+        display: flex;
+        flex-direction: column;
+      }
+      @include breakpoint(lg) {
+        position: absolute;
+        top: 2.5rem; //40px
+        border-radius: 0.3125rem;
+        background-color: $almost_white;
+        box-shadow: 0 0 0.625rem $medium_gray;
+        //to position first sub menu
+        &.firstSub {
+          left: -3.12rem; //50px
+        }
+      }
+    }
+    //.sub_link = (.submenu li)
+    &__sub__link {
+      display: flex;
+      margin-bottom: 1.25rem;
+      img {
+        width: 1.25rem;
+        margin-right: 0.625rem;
+      }
+    }
+    &__login__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-self: start;
+      width: clamp(11.875rem, 30vw, 14.375rem); //190 to 230px
+      text-align: center;
+      gap: clamp(0.75rem, 4vw, 2.5rem); //12 to 40
+      margin-top: 1.87rem;
+      color: $medium_gray;
+      @include breakpoint(lg) {
+        flex-direction: row;
+        margin-top: 0;
+        width: fit-content;
+        justify-content: end;
+        flex-grow: 1;
+      }
+      span {
+        display: block;
+        padding: 0.625rem 0;
+        cursor: pointer;
+        a {
+          color: $medium_gray;
+          &:hover {
+            color: $almost_black;
+            transition: color 0.3s;
+          }
+        }
+      }
+      .register {
+        border: 2px solid $medium_gray;
+        border-radius: 0.937rem;
+        @include breakpoint(lg) {
+          padding: 0.625rem 1.25rem;
+        }
+      }
+    }
+  }
+}

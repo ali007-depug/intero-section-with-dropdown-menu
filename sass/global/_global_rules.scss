@@ -1,0 +1,46 @@
+@use "vars" as *;
+// globle rules
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body{
+  // font-size: 100%;
+  font-family: 'Epilogue';
+}
+a,a:visited {
+  text-decoration: none;
+  transition: all 0.2s ease-in; //change all
+}
+img {
+  display: block;
+  height: auto;
+}
+// end globle rules
+
+
+  //overlay
+  .overlay {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.372);
+    z-index: 99;
+    //handel with js
+    &.showOverlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+
+.noScroll{
+  overflow-y: hidden;
+}
