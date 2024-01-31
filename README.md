@@ -36,7 +36,7 @@ For Desktop
 
 ### Links
 
-- Live Site URL: [live site URL ](https://ali007-depug/intro-section-with-dropdown-menu)
+- Live Site URL: [live site URL ](https://ali007-depug/intero-section-with-dropdown-menu)
 
 ## My process
 
