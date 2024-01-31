@@ -284,8 +284,8 @@ img {
 }
 @media (min-width: 1024px) {
   .hero__headline {
-    grid-row: 2/3;
-    max-width: 30.06rem;
+    grid-row: 1/2;
+    max-width: 27.06rem;
   }
 }
 .hero__description {
@@ -323,7 +323,7 @@ img {
   .hero__description .button {
     position: absolute;
     margin: 0;
-    bottom: -1.125rem;
+    bottom: 1.875rem;
   }
 }
 .hero__description .button:hover {
@@ -338,7 +338,7 @@ img {
 @media (min-width: 1024px) {
   .hero__icon {
     grid-row: 4/5;
-    margin-top: clamp(4.68rem, 7vw, 5.625rem);
+    margin-top: 30px;
   }
 }
 .hero__icon img {
